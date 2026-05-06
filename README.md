@@ -1,49 +1,48 @@
-# 📊 Sentiment Analysis with Word2Vec + Random Forest
+# 🧬 Genetic Algorithm for Traveling Salesman Problem (TSP)
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-NLP-green)
+![Optimization](https://img.shields.io/badge/Optimization-Genetic%20Algorithm-green)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
 ---
 
 ## 🚀 Overview
 
-This project presents an end-to-end Natural Language Processing (NLP) pipeline for sentiment analysis. It leverages **Word2Vec embeddings** for feature representation and a **Random Forest classifier** for prediction.
+This project implements a **Genetic Algorithm (GA)** to solve the classic **Traveling Salesman Problem (TSP)** using a set of Colombian cities.
 
-The objective is to accurately classify textual data (e.g., tweets or reviews) into **positive** or **negative sentiment**, demonstrating practical applications of machine learning in text analytics.
+The goal is to determine the **optimal route with the minimum total distance**, visiting each city exactly once and returning to the starting point. The solution is achieved through evolutionary optimization techniques.
 
 ---
 
 ## 🧠 Key Features
 
-* ✔ Data preprocessing and text cleaning
-* ✔ Tokenization and stopword removal
-* ✔ Word embedding using Word2Vec
-* ✔ Supervised learning with Random Forest
-* ✔ Model evaluation with standard metrics
+* ✔ Genetic Algorithm implemented from scratch
+* ✔ Route optimization across multiple cities
+* ✔ Fitness function based on total distance
+* ✔ Evolution across generations
+* ✔ Visualization of convergence and optimal route
 
 ---
 
 ## 🧰 Tech Stack
 
-* **Programming Language:** Python
-* **Libraries:** Pandas, NumPy, Scikit-learn, NLTK
-* **Visualization:** Matplotlib, Seaborn
-* **Modeling:** Word2Vec + Random Forest
+* **Language:** Python
+* **Libraries:** NumPy, Matplotlib
+* **Concepts:** Genetic Algorithms, Optimization, TSP
 
 ---
 
 ## 📁 Project Structure
 
 ```
-sentiment-analysis-ml/
+genetic-algorithm-tsp/
 │
 ├── notebooks/
-│   └── sentiment_analysis.ipynb
-├── data/
-├── src/
-├── requirements.txt
-└── README.md
+│   └── tsp_genetic_algorithm.ipynb
+├── images/
+│   ├── evolution.png
+│   └── ruta_optima.png
+├── README.md
 ```
 
 ---
@@ -53,14 +52,14 @@ sentiment-analysis-ml/
 Clone the repository:
 
 ```bash
-git clone https://github.com/TU-USUARIO/sentiment-analysis-ml.git
-cd sentiment-analysis-ml
+git clone https://github.com/pipediaz1234/genetic-algorithm-tsp.git
+cd genetic-algorithm-tsp
 ```
 
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install numpy matplotlib
 ```
 
 ---
@@ -76,49 +75,67 @@ jupyter notebook
 Then open:
 
 ```
-notebooks/sentiment_analysis.ipynb
+notebooks/tsp_genetic_algorithm.ipynb
 ```
 
 ---
 
 ## 🔍 Methodology
 
-The project follows a structured machine learning pipeline:
+The Genetic Algorithm follows these steps:
 
-1. **Data Cleaning:** Removal of noise, HTML tags, and special characters
-2. **Text Processing:** Tokenization and normalization
-3. **Feature Engineering:** Word embeddings via Word2Vec
-4. **Model Training:** Random Forest classifier
-5. **Evaluation:** Accuracy, precision, recall, and F1-score
+1. **Initialization:** Generate random routes (initial population)
+2. **Evaluation:** Compute total distance (fitness function)
+3. **Selection:** Choose best-performing individuals
+4. **Crossover:** Combine routes to generate offspring
+5. **Mutation:** Introduce diversity
+6. **Iteration:** Repeat until convergence
 
 ---
 
 ## 📊 Results & Visualizations
 
-### 🔹 Confusion Matrix
+### 🔹 Evolution of Best Distance per Generation
 
-![Confusion Matrix](https://via.placeholder.com/600x300?text=Confusion+Matrix)
+![Evolution](images/evolution.png)
 
-### 🔹 Model Performance
+📌 The algorithm converges around generation **13**, reaching a minimum distance of approximately:
 
-![Model Metrics](https://via.placeholder.com/600x300?text=Accuracy+Precision+Recall)
-
-> ⚠️ Replace these images with real outputs from your notebook (recommended).
+**1807.23 km**
 
 ---
 
-## 📈 Performance
+### 🔹 Optimal Route (Colombian Cities)
 
-The model demonstrates solid performance in sentiment classification tasks, highlighting the effectiveness of combining distributed word representations with ensemble learning techniques.
+![Optimal Route](images/ruta_optima.png)
+
+📍 Cities included in the route:
+
+* Bogotá (Start/End)
+* Cali
+* Pereira
+* Manizales
+* Medellín
+* Bucaramanga
+* Barranquilla
+* Cartagena
+
+---
+
+## 📈 Performance Analysis
+
+* Fast convergence in early generations
+* Stable solution after generation 13
+* Efficient reduction of total travel distance
 
 ---
 
 ## 💡 Future Improvements
 
-* 🔹 Hyperparameter tuning
-* 🔹 Deep learning models (LSTM, Transformers)
-* 🔹 API deployment with Flask or FastAPI
-* 🔹 Integration with real-time data sources
+* 🔹 Increase population size
+* 🔹 Advanced crossover strategies
+* 🔹 Hybrid optimization (GA + Local Search)
+* 🔹 Interactive visualization
 
 ---
 
